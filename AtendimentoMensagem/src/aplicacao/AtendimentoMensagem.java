@@ -1,3 +1,11 @@
+/*
+Check point 2 - Códigos de Alta Performance
+Integrantes:
+Nome: Arthur Muniz Fedel - RM: 564638
+Nome: Mateus Rosal Lanzoni - RM: 565728
+Nome: Erick Akira Ohashi Abe - RM: 562154
+Nome: Victor Vallota Amaral - RM:562645
+ */
 package aplicacao;
 
 import entidades.Mensagem;
