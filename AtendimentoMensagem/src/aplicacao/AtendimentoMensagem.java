@@ -12,7 +12,7 @@ public class AtendimentoMensagem {
     private static FilaMensagens filaSugestao   = new FilaMensagens(CAPACIDADE);
     private static FilaMensagens filaResolucao  = new FilaMensagens(CAPACIDADE);
 
-    private static Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         int op;
@@ -35,7 +35,7 @@ public class AtendimentoMensagem {
         sc.close();
     }
 
-    private static void menu() {
+    public static void menu() {
         System.out.println("\n--- MENU ---");
         System.out.println("Reclamações: " + filaReclamacao.size());
         System.out.println("Sugestões:   " + filaSugestao.size());
@@ -43,7 +43,7 @@ public class AtendimentoMensagem {
         System.out.println("0-Sair  1-Receber  2-Atender  3-Resolver");
     }
 
-    private static int podeEncerrar() {
+    public static int podeEncerrar() {
         if (!filaReclamacao.isEmpty() || !filaSugestao.isEmpty() || !filaResolucao.isEmpty()) {
             System.out.println("[AVISO] Ainda há mensagens pendentes.");
             return 1;
@@ -51,7 +51,7 @@ public class AtendimentoMensagem {
         return 0;
     }
 
-    private static void receberMensagem() {
+    public static void receberMensagem() {
         System.out.println("\n--- NOVA MENSAGEM ---");
 
         int canal = lerOpcao("1-App  2-WhatsApp: ", 1, 2);
@@ -75,7 +75,7 @@ public class AtendimentoMensagem {
         System.out.println("[OK] Mensagem adicionada.");
     }
 
-    private static void atenderMensagem() {
+    public static void atenderMensagem() {
         System.out.println("\n--- ATENDER ---");
 
         int tipo = lerOpcao("1-Reclamação  2-Sugestão: ", 1, 2);
@@ -99,7 +99,7 @@ public class AtendimentoMensagem {
         }
     }
 
-    private static void processarResolucao() {
+    public static void processarResolucao() {
         System.out.println("\n--- RESOLUÇÃO ---");
 
         if (filaResolucao.isEmpty()) {
@@ -114,7 +114,7 @@ public class AtendimentoMensagem {
 
     // ===== UTILITÁRIOS =====
 
-    private static int lerInt(String msg) {
+    public static int lerInt(String msg) {
         while (true) {
             try {
                 System.out.print(msg);
@@ -125,7 +125,7 @@ public class AtendimentoMensagem {
         }
     }
 
-    private static int lerOpcao(String msg, int min, int max) {
+    public static int lerOpcao(String msg, int min, int max) {
         int op;
         do {
             op = lerInt(msg);
@@ -133,7 +133,7 @@ public class AtendimentoMensagem {
         return op;
     }
 
-    private static String lerTextoObrigatorio(String msg) {
+    public static String lerTextoObrigatorio(String msg) {
         String txt;
         do {
             System.out.print(msg);

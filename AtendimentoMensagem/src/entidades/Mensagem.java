@@ -33,7 +33,7 @@ public class Mensagem {
     public void setCanal(String canal) { this.canal = canal; }
 
     // Método auxiliar (deixa o toString mais limpo)
-    private String getMotivoStr() {
+    public String getMotivoStr() {
         return (motivo == 1) ? "Reclamação" : "Sugestão";
     }
 
